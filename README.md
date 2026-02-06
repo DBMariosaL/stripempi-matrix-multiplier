@@ -34,6 +34,7 @@ number of MPI processes divides `8`.
 This project is **most straightforward on Linux** (and that is the usual target for MPI coursework/HPC clusters), but it is not Linux-only.
 
 Platform notes:
+
 - **Linux**: best-supported path (OpenMPI/MPICH via package manager).
 - **macOS**: works with Homebrew OpenMPI.
 - **Windows**: possible, but setup is usually harder; **WSL2 + Ubuntu + OpenMPI** is the easiest path.
@@ -41,22 +42,26 @@ Platform notes:
 ### 1) Install MPI toolchain
 
 Ubuntu/Debian:
+
 ```bash
 sudo apt update
 sudo apt install -y build-essential openmpi-bin libopenmpi-dev
 ```
 
 Fedora:
+
 ```bash
 sudo dnf install -y gcc-c++ openmpi openmpi-devel
 ```
 
 Arch Linux:
+
 ```bash
 sudo pacman -S --needed base-devel openmpi
 ```
 
 macOS (Homebrew):
+
 ```bash
 brew install open-mpi
 ```
@@ -82,6 +87,7 @@ mpirun -np 4 ./bin/stripe_mpi data/matA.dat data/matB.dat 8
 ```
 
 Arguments:
+
 - `argv[1]`: path to matrix A file
 - `argv[2]`: path to matrix B file
 - `argv[3]`: matrix dimension (use `8` with current data/generator)
